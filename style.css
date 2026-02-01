@@ -22,8 +22,20 @@
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-dark);
+    /* Canvas Background */
     /* background-image removed to show interactive canvas */
     color: white;
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    /* Let clicks pass through */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -39,6 +51,8 @@ body {
     width: 100%;
     max-width: 1000px;
     padding: 20px;
+    margin: 0 auto;
+    /* Ensure centering */
 }
 
 .logo-container {
@@ -50,6 +64,14 @@ body {
     max-width: 250px;
     filter: drop-shadow(0 0 20px rgba(215, 55, 27, 0.5));
     animation: float 6s ease-in-out infinite;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .logo-img {
+        max-width: 200px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
 }
 
 .btn-random {
@@ -433,4 +455,56 @@ body {
     font-size: 1.2rem;
     margin-right: 8px;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* --- Responsive Design --- */
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .game-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .provider-column {
+        width: 100%;
+        max-width: 400px;
+        /* Slight increase for mobile card view */
+        margin-bottom: 40px;
+    }
+
+    .carousel-container {
+        height: 260px;
+        /* Adjust if needed */
+    }
+
+    .btn-random {
+        width: 80%;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 200px;
+    }
+
+    #mainTitle {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .provider-column {
+        padding: 10px;
+    }
 }
