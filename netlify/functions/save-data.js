@@ -7,15 +7,27 @@ exports.handler = async (event, context) => {
     try {
         const { payload } = JSON.parse(event.body);
         const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-        const REPO_OWNER = process.env.REPO_OWNER;
-        const REPO_NAME = process.env.REPO_NAME;
+        const REPO_OWNER = process.env.REPO_OWNER || 'bigwin959';
+        const REPO_NAME = process.env.REPO_NAME || 'PlayRShweLucks';
         const BRANCH = 'main';
         const FILE_PATH = 'data.json';
 
-        if (!GITHUB_TOKEN || !REPO_OWNER || !REPO_NAME) {
+        if (!GITHUB_TOKEN) {
             return {
                 statusCode: 500,
-                body: JSON.stringify({ error: 'Missing Connection Settings' })
+                body: JSON.stringify({ error: 'Missing specific setting: GITHUB_TOKEN' })
+            };
+        }
+        if (!REPO_OWNER) {
+             return {
+                statusCode: 500,
+                body: JSON.stringify({ error: 'Missing specific setting: REPO_OWNER' })
+            };
+        }
+        if (!REPO_NAME) {
+             return {
+                statusCode: 500,
+                body: JSON.stringify({ error: 'Missing specific setting: REPO_NAME' })
             };
         }
 
