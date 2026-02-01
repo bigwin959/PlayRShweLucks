@@ -158,7 +158,8 @@ body {
     justify-content: center;
     perspective: 800px;
     /* Adjusted perspective for smaller scale */
-    overflow: hidden;
+    overflow: visible;
+    /* Allow shadow to pop out */
 }
 
 /* Hide scrollbar since we are using custom stacking */
