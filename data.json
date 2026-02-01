@@ -1,6 +1,6 @@
 {
   "siteConfig": {
-    "pageTitle": "Random Game Picker ShweLucksss",
+    "pageTitle": "Random Game Picker ShweLucks",
     "headerTitle": "ဒီနေ့အတွက် နိုင်ချေမြင့်ဂိမ်း ကစားရန်",
     "playButtonText": "ဂိမ်းရွေးရန်",
     "ctaUrl": "https://www.shwelucks.com",
@@ -10,7 +10,7 @@
     "colors": {
       "primary": "#00f3ff",
       "secondary": "#bc13fe",
-      "accent": "#ffd700",
+      "accent": "#171717",
       "background": "#050505"
     }
   },
