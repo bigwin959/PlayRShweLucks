@@ -22,9 +22,7 @@
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-dark);
-    background-image:
-        radial-gradient(circle at 10% 20%, rgba(215, 55, 27, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(255, 94, 69, 0.15) 0%, transparent 40%);
+    /* background-image removed to show interactive canvas */
     color: white;
     min-height: 100vh;
     display: flex;
