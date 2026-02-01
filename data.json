@@ -8,9 +8,9 @@
     "lockTextOpen": "Unlock",
     "lockTextClosed": "LOCKED",
     "colors": {
-      "primary": "#00f3ff",
-      "secondary": "#bc13fe",
-      "accent": "#171717",
+      "primary": "#ff0000",
+      "secondary": "#b700ff",
+      "accent": "#ff0000",
       "background": "#050505"
     }
   },
