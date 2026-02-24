@@ -282,7 +282,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startFakeNotifications() {
-      const container = document.getElementById("notificationsContainer");
+      // Find the currently active card's notifications container
+      const activeCard = document.querySelector(".game-card.card-active");
+      if (!activeCard) return;
+
+      const container = activeCard.querySelector(".notifications-container");
       if (!container) return;
       container.innerHTML = ""; // Clear existing
 
@@ -300,15 +304,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
               notif.innerHTML = `<span class="name">${randomName} won</span> <span class="amount">+${randomAmount} MMK</span>`;
 
-              // Randomize horizontal position around the edges
-              const isLeft = Math.random() > 0.5;
-              if (isLeft) {
-                  notif.style.left = (10 + Math.random() * 15) + "%";
-              } else {
-                  notif.style.right = (10 + Math.random() * 15) + "%";
-              }
-              
-              notif.style.top = (40 + Math.random() * 20) + "%";
+              // Rely on flexbox/CSS positioning inherited from card
+              // Remove random absolute positioning overrides so they flow correctly.
+              notif.style.left = "0";
 
               container.appendChild(notif);
 
@@ -429,8 +427,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </a>
             </div>
             <h2 class="game-title">${game.name}</h2>
-            <div class="card-footer" style="justify-content: center;">
-                <span class="rtp-badge ${hiddenClass}">${rtpDisplay}</span>
+            <div class="card-footer" style="flex-direction: column; position: relative;">
+                <span class="rtp-badge ${hiddenClass}" style="z-index: 2; position: relative;">${rtpDisplay}</span>
+                <div class="notifications-container"></div>
             </div>
         `;
 
