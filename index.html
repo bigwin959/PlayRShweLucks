@@ -23,45 +23,24 @@
             ဂိမ်းရွေးရန်
         </button>
 
-        <div class="game-card-container" id="resultsContainer">
+        <!-- Header Navigation for Providers -->
+        <div class="provider-titles-slider" id="providerSlider">
+            <h3 class="title-item left" data-provider="pg">PG Soft</h3>
+            <h3 class="title-item active" data-provider="jili">JILI စလော့</h3>
+            <h3 class="title-item right" data-provider="pp">PP Slot</h3>
+        </div>
 
-            <!-- JILI Column -->
+        <div class="game-card-container single-column" id="resultsContainer">
+            <div id="notificationsContainer" class="notifications-container"></div>
             <div class="provider-column">
-                <h3 class="column-title">JILI</h3>
-                <div class="carousel-container" id="carousel-jili"></div>
-                <button class="lock-btn" id="lock-jili" data-target="jili">
+                <div class="carousel-container" id="main-carousel"></div>
+                <button class="lock-btn" id="lock-btn">
                     <span class="lock-icon">🔓</span> Unlock
                 </button>
-                <a href="https://www.shwelucks.com" target="_blank" class="play-btn" id="play-jili">
+                <a href="https://www.shwelucks.com" target="_blank" class="play-btn" id="play-btn">
                     <span class="play-icon">🎮</span> ကစားမယ်
                 </a>
             </div>
-
-            <!-- PG Column -->
-            <div class="provider-column">
-                <h3 class="column-title">PG Soft</h3>
-                <div class="carousel-container" id="carousel-pg"></div>
-                <button class="lock-btn" id="lock-pg" data-target="pg">
-                    <span class="lock-icon">🔓</span> Unlock
-                </button>
-                <a href="https://www.shwelucks.com" target="_blank" class="play-btn" id="play-pg">
-                    <span class="play-icon">🎮</span> ကစားမယ်
-                </a>
-            </div>
-
-            <!-- PP Column -->
-            <div class="provider-column">
-                <h3 class="column-title">PP Slot</h3>
-                <div class="carousel-container" id="carousel-pp"></div>
-                <button class="lock-btn" id="lock-pp" data-target="pp">
-                    <span class="lock-icon">🔓</span> Unlock
-                </button>
-                <a href="https://www.shwelucks.com" target="_blank" class="play-btn" id="play-pp">
-                    <span class="play-icon">🎮</span> ကစားမယ်
-                </a>
-            </div>
-
-
         </div>
     </div>
 
