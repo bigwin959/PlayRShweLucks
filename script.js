@@ -293,28 +293,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const names = ["Josh", "Alex", "Mg Mg", "Ko Ko", "Aung Aung", "Su Su", "Zaw Zaw"];
       const amounts = ["4,000", "15,000", "100,000", "50,000", "20,000", "5,000"];
 
-      // Spawn 3 notifications spaced out
-      for (let i = 0; i < 3; i++) {
-          setTimeout(() => {
-              const notif = document.createElement("div");
-              notif.className = "fake-notification";
-
-              const randomName = names[Math.floor(Math.random() * names.length)];
-              const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
-
-              notif.innerHTML = `<span class="name">${randomName} won</span> <span class="amount">+${randomAmount} MMK</span>`;
-
-              // Rely on flexbox/CSS positioning inherited from card
-              // Remove random absolute positioning overrides so they flow correctly.
-              notif.style.left = "0";
-
-              container.appendChild(notif);
-
-              setTimeout(() => {
-                  if (notif.parentNode) notif.remove();
-              }, 3000); 
-          }, i * 800 + 400); 
+      // Generate random winners list
+      const winnersList = [];
+      for (let i = 0; i < 5; i++) {
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+        winnersList.push({ name: randomName, amount: randomAmount });
       }
+
+      const listWrapper = document.createElement("div");
+      listWrapper.className = "scrolling-winners-list";
+      
+      // Add items twice to create seamless loop effect
+      const allItems = [...winnersList, ...winnersList];
+      
+      allItems.forEach((winner) => {
+          const notif = document.createElement("div");
+          notif.className = "fake-notification";
+          notif.innerHTML = `<span class="name">${winner.name} won</span> <span class="amount">+${winner.amount} MMK</span>`;
+          listWrapper.appendChild(notif);
+      });
+
+      container.appendChild(listWrapper);
   }
 
   // --- Reuse existing helper functions ---
