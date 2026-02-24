@@ -248,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         if (activeCard) {
           activeCard.classList.add("winning", "super-win");
+          document.body.classList.add("modal-open");
           startFakeNotifications();
         }
       }
@@ -421,6 +422,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     card.innerHTML = `
+            <img src="assets/logo.png" class="card-mini-logo" alt="Mini Logo">
+            <div class="card-close-btn">&times;</div>
             <div class="game-image-wrapper">
                 <a href="https://www.shwelucks.com" target="_blank">
                     <img src="${game.image}" alt="${game.name}" class="game-image">
@@ -435,6 +438,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 </a>
             </div>
         `;
+
+    const closeBtn = card.querySelector('.card-close-btn');
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.remove('winning', 'super-win');
+        document.body.classList.remove('modal-open');
+    });
 
     return card;
   }
