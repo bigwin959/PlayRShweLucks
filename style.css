@@ -345,13 +345,6 @@ body {
   margin-top: auto;
 }
 
-.game-provider {
-  font-size: 0.7rem;
-  /* Reduced */
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 
 .rtp-badge {
   background: linear-gradient(45deg, var(--primary-red), var(--neon-gold));
@@ -429,49 +422,6 @@ body {
   }
 }
 
-/* Lock Button Styles */
-.lock-btn {
-  display: block;
-  margin: 15px auto 0;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--primary-red);
-  color: var(--primary-accent);
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: "Outfit", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  transition: all 0.3s ease;
-  display: flex;
-  /* Flex for icon/text alignment */
-  align-items: center;
-  gap: 8px;
-}
-
-.lock-btn:hover {
-  background: rgba(215, 55, 27, 0.2);
-  box-shadow: 0 0 10px rgba(215, 55, 27, 0.3);
-}
-
-.lock-btn.locked {
-  background: var(--neon-gold);
-  color: #000;
-  border-color: var(--neon-gold);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-}
-
-.lock-btn.locked .lock-icon {
-  content: "🔒";
-  /* We handle icon text change in JS, but this styles the state */
-}
-
-/* Dim locked column content slightly to indicate it's "safe" */
-.provider-column.locked-state .carousel-container {
-  opacity: 0.8;
-  filter: sepia(0.5);
-  /* Visual cue that it's frozen/golden */
-}
 
 /* Play Button Styles */
 .play-btn {

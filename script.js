@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainCarousel = document.getElementById("main-carousel");
 
   // Lock Button
-  const lockBtn = document.getElementById("lock-btn");
   let isLocked = false;
 
   let isAnimating = false;
@@ -115,28 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
   };
-
-  // Lock Button listener
-  if (lockBtn) {
-    lockBtn.addEventListener("click", () => {
-      if (isAnimating) return;
-
-      isLocked = !isLocked;
-      soundManager.playLockSound();
-
-      const col = lockBtn.closest(".provider-column");
-
-      if (isLocked) {
-        lockBtn.classList.add("locked");
-        lockBtn.innerHTML = '<span class="lock-icon">🔒</span> LOCKED';
-        if (col) col.classList.add("locked-state");
-      } else {
-        lockBtn.classList.remove("locked");
-        lockBtn.innerHTML = '<span class="lock-icon">🔓</span> Unlock';
-        if (col) col.classList.remove("locked-state");
-      }
-    });
-  }
 
   // Provider Slider Logic
   titleItems.forEach((item) => {
@@ -287,9 +264,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const title = card.querySelector(".game-title");
       title.textContent = game.name;
-
-      const providerSpan = card.querySelector(".game-provider");
-      providerSpan.textContent = game.provider;
 
       const rtpSpan = card.querySelector(".rtp-badge");
 
@@ -455,8 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </a>
             </div>
             <h2 class="game-title">${game.name}</h2>
-            <div class="card-footer">
-                <span class="game-provider">${game.provider}</span>
+            <div class="card-footer" style="justify-content: center;">
                 <span class="rtp-badge ${hiddenClass}">${rtpDisplay}</span>
             </div>
         `;
