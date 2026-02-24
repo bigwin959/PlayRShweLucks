@@ -574,27 +574,33 @@ body {
 
 .fake-notification {
   width: 100%;
-  text-align: center;
+  box-sizing: border-box;
   background: transparent;
-  padding: 4px 0;
+  padding: 0 15px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-  font-size: 0.70rem;
+  gap: 8px;
+  font-size: 0.75rem;
   height: 25px; /* Fixed height for consistent scrolling */
 }
 
 .fake-notification .name {
   color: #ddd;
   font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  max-width: 55%; /* Ensure it never pushes amount out of frame */
 }
 
 .fake-notification .amount {
   color: var(--neon-gold);
   font-weight: bold;
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 @keyframes scrollInfinite {
