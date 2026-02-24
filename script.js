@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!container) return;
       container.innerHTML = ""; // Clear existing
 
-      const names = ["Josh", "Alex", "Mg Mg", "Ko Ko", "Aung Aung", "Su Su", "Zaw Zaw"];
+      const names = ["Khuuyar", "Gull Gull", "Htet Aung Kyaw", "Sai Min", "Sai Wunna", "Kyaw Win Myaing", "Kyaw Myat Thu"];
       const amounts = ["4,000", "15,000", "100,000", "50,000", "20,000", "5,000"];
 
       // Generate random winners list
@@ -427,9 +427,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 </a>
             </div>
             <h2 class="game-title">${game.name}</h2>
-            <div class="card-footer" style="flex-direction: column; position: relative;">
+            <div class="card-footer" style="flex-direction: column; align-items: center; width: 100%;">
                 <span class="rtp-badge ${hiddenClass}" style="z-index: 2; position: relative;">${rtpDisplay}</span>
                 <div class="notifications-container"></div>
+                <a href="https://www.shwelucks.com" target="_blank" class="card-play-btn">
+                    <span class="play-icon" style="font-size: 0.9rem;">🎮</span> ကစားမယ်
+                </a>
             </div>
         `;
 
