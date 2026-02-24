@@ -423,44 +423,6 @@ body {
 }
 
 
-/* Play Button Styles */
-.play-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15px;
-  /* Spacing from lock button */
-  background: linear-gradient(135deg, var(--primary-red), var(--primary-dark));
-  color: white;
-  text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.play-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(215, 55, 27, 0.4);
-  background: linear-gradient(
-    135deg,
-    var(--primary-accent),
-    var(--primary-red)
-  );
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.play-btn:active {
-  transform: translateY(1px);
-}
-
 .play-icon {
   font-size: 1.2rem;
   margin-right: 8px;
