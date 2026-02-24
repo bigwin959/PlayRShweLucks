@@ -208,8 +208,8 @@ body {
 
 .carousel-container {
   position: relative;
-  height: 280px;
-  /* Reduced height */
+  height: 360px;
+  /* Increased height to fit larger cards */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -226,8 +226,10 @@ body {
 
 .game-card {
   position: absolute;
-  width: 170px;
-  /* Reduced from 220px */
+  width: 196px;
+  /* Increased horizontally by 15% */
+  min-height: 310px;
+  /* Increased vertically by 20% */
   top: 15px;
   left: 50%;
   /* Center horizontally */
