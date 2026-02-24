@@ -226,8 +226,8 @@ body {
 
 .game-card {
   position: absolute;
-  width: 196px;
-  /* Increased horizontally by 15% */
+  width: 240px;
+  /* Increased horizontally to fit full names */
   min-height: 310px;
   /* Increased vertically by 20% */
   top: 15px;
@@ -576,7 +576,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   background: transparent;
-  padding: 0 15px;
+  padding: 0 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -592,7 +592,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
-  max-width: 55%; /* Ensure it never pushes amount out of frame */
+  flex: 1;
+  min-width: 0;
 }
 
 .fake-notification .amount {
