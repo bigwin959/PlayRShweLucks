@@ -118,18 +118,45 @@ document.addEventListener("DOMContentLoaded", () => {
   // Provider Slider Logic
   titleItems.forEach((item) => {
     item.addEventListener("click", () => {
-      if (isAnimating || isLocked) return;
-      const clickedProvider = item.dataset.provider;
-      if (clickedProvider === currentProvider) return;
-
-      currentProvider = clickedProvider;
-      updateProviderSliderUI();
-
-      // Update UI
-      mainCarousel.innerHTML = "";
-      populateInitialCards(mainCarousel, window.gameLists[currentProvider]);
+      handleProviderChange(item.dataset.provider);
     });
   });
+
+  const prevProviderBtn = document.getElementById("prevProviderBtn");
+  const nextProviderBtn = document.getElementById("nextProviderBtn");
+
+  if (prevProviderBtn) {
+    prevProviderBtn.addEventListener("click", () => navigateProvider("prev"));
+  }
+
+  if (nextProviderBtn) {
+    nextProviderBtn.addEventListener("click", () => navigateProvider("next"));
+  }
+
+  function navigateProvider(direction) {
+    if (isAnimating || isLocked) return;
+    let currentIndex = providerOrder.indexOf(currentProvider);
+
+    if (direction === "next") {
+      currentIndex = (currentIndex + 1) % providerOrder.length;
+    } else {
+      currentIndex = (currentIndex - 1 + providerOrder.length) % providerOrder.length;
+    }
+
+    handleProviderChange(providerOrder[currentIndex]);
+  }
+
+  function handleProviderChange(clickedProvider) {
+    if (isAnimating || isLocked) return;
+    if (clickedProvider === currentProvider) return;
+
+    currentProvider = clickedProvider;
+    updateProviderSliderUI();
+
+    // Update UI
+    mainCarousel.innerHTML = "";
+    populateInitialCards(mainCarousel, window.gameLists[currentProvider]);
+  }
 
   function updateProviderSliderUI() {
     titleItems.forEach((item) => {

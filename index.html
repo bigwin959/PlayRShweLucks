@@ -25,10 +25,18 @@
         </button>
 
         <!-- Header Navigation for Providers -->
-        <div class="provider-titles-slider" id="providerSlider">
-            <h3 class="title-item left" data-provider="pg">PG Soft</h3>
-            <h3 class="title-item active" data-provider="jili">JILI စလော့</h3>
-            <h3 class="title-item right" data-provider="pp">PP Slot</h3>
+        <div class="provider-nav-wrapper">
+            <button id="prevProviderBtn" class="nav-arrow left-arrow">
+                <svg viewBox="0 0 24 24"><path d="M20 2L4 12L20 22Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="provider-titles-slider" id="providerSlider">
+                <h3 class="title-item left" data-provider="pg">PG Soft</h3>
+                <h3 class="title-item active" data-provider="jili">JILI စလော့</h3>
+                <h3 class="title-item right" data-provider="pp">PP Slot</h3>
+            </div>
+            <button id="nextProviderBtn" class="nav-arrow right-arrow">
+                <svg viewBox="0 0 24 24"><path d="M4 2L20 12L4 22Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </button>
         </div>
 
         <div class="game-card-container single-column" id="resultsContainer">
