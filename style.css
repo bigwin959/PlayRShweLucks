@@ -188,22 +188,22 @@ body {
 
 .title-item.left {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: #999;
   transform: translate(-90px, 35px) scale(0.75);
   z-index: 1;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .title-item.right {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: #999;
   transform: translate(90px, 35px) scale(0.75);
   z-index: 1;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .title-item:hover:not(.active) {
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
 }
 
 .carousel-container {
