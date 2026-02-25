@@ -310,39 +310,39 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startFakeNotifications() {
-      // Find the currently active card's notifications container
-      const activeCard = document.querySelector(".game-card.card-active");
-      if (!activeCard) return;
+    // Find the currently active card's notifications container
+    const activeCard = document.querySelector(".game-card.card-active");
+    if (!activeCard) return;
 
-      const container = activeCard.querySelector(".notifications-container");
-      if (!container) return;
-      container.innerHTML = ""; // Clear existing
+    const container = activeCard.querySelector(".notifications-container");
+    if (!container) return;
+    container.innerHTML = ""; // Clear existing
 
-      const names = ["Khuuyar", "Gull Gull", "Htet Aung Kyaw", "Sai Min", "Sai Wunna", "Kyaw Win Myaing", "Kyaw Myat Thu"];
-      const amounts = ["4,000", "15,000", "100,000", "50,000", "20,000", "5,000"];
+    const names = ["Khuuyar", "Gull Gull", "Htet Aung Kyaw", "Sai Min", "Sai Wunna", "Kyaw Win Myaing", "Kyaw Myat Thu", "Zin Myo Naing", "Aung Myo Thu", "Aung Ko Latt", "Nay Min Thu"];
+    const amounts = ["4,299", "1,292", "39,217", "7,539", "882", "62,999", "7,261", "849,815", "1,299,575"];
 
-      // Generate random winners list
-      const winnersList = [];
-      for (let i = 0; i < 5; i++) {
-        const randomName = names[Math.floor(Math.random() * names.length)];
-        const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
-        winnersList.push({ name: randomName, amount: randomAmount });
-      }
+    // Generate random winners list
+    const winnersList = [];
+    for (let i = 0; i < 5; i++) {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+      winnersList.push({ name: randomName, amount: randomAmount });
+    }
 
-      const listWrapper = document.createElement("div");
-      listWrapper.className = "scrolling-winners-list";
-      
-      // Add items twice to create seamless loop effect
-      const allItems = [...winnersList, ...winnersList];
-      
-      allItems.forEach((winner) => {
-          const notif = document.createElement("div");
-          notif.className = "fake-notification";
-          notif.innerHTML = `<span class="name">${winner.name} won</span> <span class="amount">+${winner.amount} MMK</span>`;
-          listWrapper.appendChild(notif);
-      });
+    const listWrapper = document.createElement("div");
+    listWrapper.className = "scrolling-winners-list";
 
-      container.appendChild(listWrapper);
+    // Add items twice to create seamless loop effect
+    const allItems = [...winnersList, ...winnersList];
+
+    allItems.forEach((winner) => {
+      const notif = document.createElement("div");
+      notif.className = "fake-notification";
+      notif.innerHTML = `<span class="name">${winner.name} won</span> <span class="amount">+${winner.amount} MMK</span>`;
+      listWrapper.appendChild(notif);
+    });
+
+    container.appendChild(listWrapper);
   }
 
   // --- Reuse existing helper functions ---
@@ -468,9 +468,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const closeBtn = card.querySelector('.card-close-btn');
     closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        card.classList.remove('winning', 'super-win');
-        document.body.classList.remove('modal-open');
+      e.stopPropagation();
+      card.classList.remove('winning', 'super-win');
+      document.body.classList.remove('modal-open');
     });
 
     return card;
